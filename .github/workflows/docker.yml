@@ -34,6 +34,7 @@ jobs:
         with:
           context: .
           push: true
+          no-cache: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_LC }}:latest
           build-args: |
             NEXT_PUBLIC_SUPABASE_URL=https://devsupabase.bryangonzales.net
