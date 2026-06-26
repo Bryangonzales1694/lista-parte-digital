@@ -16,7 +16,7 @@ export async function cambiarContrasenaPropia(formData: FormData) {
   const { error } = await supabase
     .from("usuarios")
     .update({ password_hash: hash })
-    .eq("id", session.id);
+    .eq("id", session.usuarioId);
 
   if (error) throw new Error(error.message);
   redirect("/comandante");
