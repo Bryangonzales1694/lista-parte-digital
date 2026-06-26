@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  lista-parte:
+    image: ghcr.io/bryangonzales1694/lista-parte-digital:latest
+    environment:
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - NODE_ENV=production
+    networks:
+      - cyphernet
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.listayparte.rule=Host(`listayparte.bryangonzales.net`)"
+        - "traefik.http.routers.listayparte.entrypoints=websecure"
+        - "traefik.http.routers.listayparte.tls=true"
+        - "traefik.http.routers.listayparte.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.listayparte.loadbalancer.server.port=3000"
+
+networks:
+  cyphernet:
+    external: true
