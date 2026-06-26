@@ -35,3 +35,6 @@ jobs:
           context: .
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_LC }}:latest
+          build-args: |
+            NEXT_PUBLIC_SUPABASE_URL=https://devsupabase.bryangonzales.net
+            NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNzE1MDUwODAwLAogICJleHAiOiAxODcyODE3MjAwCn0.M_pbMyhC_oEB3F6rfIdqbBBiyL7cwdqAAPhISngHCj4
