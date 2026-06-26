@@ -1,3 +1,4 @@
+﻿export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { getSession } from "@/lib/auth/current-user";
 import { getPartesPorFecha, getHistorialComandante } from "@/lib/historial";

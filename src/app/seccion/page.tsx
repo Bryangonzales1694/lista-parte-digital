@@ -1,3 +1,4 @@
+﻿export const dynamic = "force-dynamic";
 import { getSession } from "@/lib/auth/current-user";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getConvocatoriaActual } from "@/lib/convocatorias";

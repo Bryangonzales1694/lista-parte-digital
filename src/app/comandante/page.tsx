@@ -1,3 +1,4 @@
+﻿export const dynamic = "force-dynamic";
 import { getSession } from "@/lib/auth/current-user";
 import { getConsolidadoBatallon } from "@/lib/consolidado";
 import { getConvocatoriaActual } from "@/lib/convocatorias";
