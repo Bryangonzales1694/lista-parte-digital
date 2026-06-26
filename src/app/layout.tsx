@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://listayparte.bryangonzales.net"),
   title: "Lista y Parte Digital — Batallón Angamos",
   description: "Sistema digital de lista y parte para el Batallón Angamos, Escuela Naval del Perú.",
 };
