@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { ESTADOS, type Estado } from "@/lib/estados";
+import { ORDEN_COMPANIAS } from "@/lib/companias";
 
 const ORDEN_SECCIONES = ["PRIMERA SECCION", "SEGUNDA SECCION", "TERCERA SECCION"];
 
@@ -144,13 +145,6 @@ export async function getConsolidadoCompania(
 
   return { secciones, totalCadetes, totalConteoPorEstado };
 }
-
-const ORDEN_COMPANIAS = [
-  "PRIMERA COMPAÑIA",
-  "SEGUNDA COMPAÑIA",
-  "TERCERA COMPAÑIA",
-  "CUARTA COMPAÑIA",
-];
 
 export type CompaniaConsolidado = {
   compania: string;

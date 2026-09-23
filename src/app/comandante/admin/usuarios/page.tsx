@@ -8,16 +8,20 @@ const ROL_LABEL: Record<string, string> = {
 };
 
 const ORDEN_COMPANIA: Record<string, number> = {
-  "PRIMERA COMPAÑIA": 1,
-  "SEGUNDA COMPAÑIA": 2,
-  "TERCERA COMPAÑIA": 3,
-  "CUARTA COMPAÑIA": 4,
+  "ESTADO MAYOR": 1,
+  "ESCOLTA DE BANDERA": 2,
+  "ESCOLTA DE BANDERA HISTORICA": 3,
+  "PRIMERA COMPAÑIA": 4,
+  "SEGUNDA COMPAÑIA": 5,
+  "TERCERA COMPAÑIA": 6,
+  "CUARTA COMPAÑIA": 7,
 };
 
 const ORDEN_SECCION: Record<string, number> = {
   "PRIMERA SECCION": 1,
   "SEGUNDA SECCION": 2,
   "TERCERA SECCION": 3,
+  GENERAL: 4,
 };
 
 function sortUsuarios<T extends { compania_asignada: string | null; seccion_asignada: string | null }>(

@@ -7,6 +7,9 @@ export const GRADO_OPTIONS = [
 ];
 
 export const COMPANIA_OPTIONS = [
+  { value: "ESTADO MAYOR", label: "Estado Mayor" },
+  { value: "ESCOLTA DE BANDERA", label: "Escolta de Bandera" },
+  { value: "ESCOLTA DE BANDERA HISTORICA", label: "Escolta de Bandera Histórica" },
   { value: "PRIMERA COMPAÑIA", label: "Primera Compañía" },
   { value: "SEGUNDA COMPAÑIA", label: "Segunda Compañía" },
   { value: "TERCERA COMPAÑIA", label: "Tercera Compañía" },
@@ -17,4 +20,5 @@ export const SECCION_OPTIONS = [
   { value: "PRIMERA SECCION", label: "Primera Sección" },
   { value: "SEGUNDA SECCION", label: "Segunda Sección" },
   { value: "TERCERA SECCION", label: "Tercera Sección" },
+  { value: "GENERAL", label: "General (Estado Mayor / Escoltas, sin secciones)" },
 ];

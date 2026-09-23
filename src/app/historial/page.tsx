@@ -6,6 +6,7 @@ import type { HistorialConvocatoria, ParteHistorial } from "@/lib/historial";
 import { logout } from "@/app/login/actions";
 import { ESTADO_LABEL, ESTADO_COLOR } from "@/lib/estados";
 import { GRADO_SIGLA } from "@/lib/grados";
+import { esCompaniaSinSecciones } from "@/lib/companias";
 
 function fechaHoyPeru() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Lima" }).format(
@@ -96,16 +97,18 @@ function VistaComandante({ convocatorias }: { convocatorias: HistorialConvocator
                   <details key={compania} className="rounded-xl bg-neutral-50 px-3 py-2">
                     <summary className="cursor-pointer text-sm font-semibold text-neutral-800">
                       {compania}
-                      <span className="ml-2 text-xs font-normal text-neutral-500">
-                        ({partesCompania.length}/3 secciones)
-                      </span>
+                      {!esCompaniaSinSecciones(compania) && (
+                        <span className="ml-2 text-xs font-normal text-neutral-500">
+                          ({partesCompania.length}/3 secciones)
+                        </span>
+                      )}
                     </summary>
                     <div className="mt-2 space-y-2">
                       {partesCompania.map((parte) => (
                         <details key={parte.id} className="rounded-lg bg-white px-3 py-2 shadow-sm">
                           <summary className="flex cursor-pointer items-center justify-between">
                             <span className="text-sm font-medium text-neutral-700">
-                              {parte.seccion}
+                              {esCompaniaSinSecciones(compania) ? "Parte" : parte.seccion}
                             </span>
                             <span className="text-xs text-neutral-400">{fmtHora(parte.fechaHora)}</span>
                           </summary>

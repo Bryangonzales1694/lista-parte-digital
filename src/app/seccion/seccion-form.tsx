@@ -5,6 +5,7 @@ import { logout } from "@/app/login/actions";
 import { ESTADOS, ESTADO_LABEL, ESTADO_COLOR, type Estado } from "@/lib/estados";
 import { GRADO_SIGLA } from "@/lib/grados";
 import { AutoRefresh } from "@/components/auto-refresh";
+import { esCompaniaSinSecciones } from "@/lib/companias";
 
 type Cadete = { id: string; nombre: string; grado: string };
 type RegistroState = { estado: Estado; observacion: string };
@@ -120,7 +121,7 @@ export function SeccionForm({
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-base font-bold text-neutral-900">
-              {compania} — {seccion}
+              {esCompaniaSinSecciones(compania) ? compania : `${compania} — ${seccion}`}
             </h1>
             <p className="text-sm text-neutral-500">{jefeNombre}</p>
           </div>
