@@ -1,8 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = "https://devsupabase.bryangonzales.net";
-const SERVICE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogInNlcnZpY2Vfcm9sZSIsCiAgImlzcyI6ICJzdXBhYmFzZSIsCiAgImlhdCI6IDE3MTUwNTA4MDAsCiAgImV4cCI6IDE4NzI4MTcyMDAKfQ.WofeW2n8TrG0O0VuGHTSELGgo9wD_8lMKfkqFySIQiA";
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://devsupabase.bryangonzales.net";
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!SERVICE_KEY) {
+  console.error("Falta SUPABASE_SERVICE_ROLE_KEY en el entorno.");
+  process.exit(1);
+}
 
 const supabase = createClient(SUPABASE_URL, SERVICE_KEY, {
   db: { schema: "lista_parte" },
